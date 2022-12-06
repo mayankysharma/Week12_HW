@@ -13,25 +13,13 @@ Gazebo Assignment: To implementat a algorithm to run TurtleBot 3 in to avoid obs
 * ```gazebo_ros```
 * ```turtlebot3```
 
-### Environment Setup
-```
-. <path-to-ROS2-installation>/ros2_humble/install/local_setup.bash
-```
-### ROS2 Workspace
-Here, an overlay workspace on top of the underlay installation workspace shall be created to place the custom-defined ROS2 packages. 
-```
-. <path-to-ROS2-installation>/ros2_humble/install/local_setup.bash
-mkdir -p <path-to-ROS2-workspace>/ros2_ws/src
-cd <path-to-ROS2-workspace>/ros2_ws/src
-```
-Source the 'underlay' installation workspace followed by the 'overlay',
-```
-. <path-to-ROS2-installation>/ros2_humble/install/local_setup.bash
-cd <path-to-ROS2-workspace>/ros2_ws
-. install/setup.bash
-```
+
 
 ## Build Instructions
+Source setup file first
+```
+. <path-to-ROS2-installation>/ros2_humble/install/local_setup.bash
+```
 ```
 cd <path-to-ROS2-workspace>/ros2_ws/src
 git clone the link to this repo
@@ -45,11 +33,7 @@ colcon build --packages-select Turtle_Bot_3_walker
 ### Simulation
 
 In a terminal, navigate to your ROS2 workspace (```ros2_ws```) and source the setup files,
-
 ````
-cd <path-to-ROS2-workspace>/ros2_ws
-. install/setup.bash
-
 export TURTLEBOT3_MODEL=waffle_pi
 
 export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:`ros2 pkg prefix turtlebot3_gazebo `/share/turtlebot3_gazebo/models/
